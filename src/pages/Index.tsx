@@ -99,7 +99,7 @@ const Index: React.FC = () => {
             </Link>
             <Link to={user ? "/browse" : "/register"}>
               <Button variant="outline" className="border-cinematic-gray/70 text-cinematic-text hover:border-accent hover:text-accent px-6 py-5 text-base sm:text-lg">
-                {user ? "Discover Books" : "Join Lumina"}
+                {user ? "Discover Books" : "Join Folio"}
               </Button>
             </Link>
           </motion.div>

@@ -11,13 +11,13 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center">
               <BookOpen className="h-8 w-8 text-accent mr-2" />
-              <span className="text-2xl font-serif font-bold text-gradient">Lumina</span>
+              <span className="text-2xl font-serif font-bold text-gradient">Folio</span>
             </Link>
             <p className="mt-4 text-sm text-cinematic-text/80">
               A cinematic library experience inspired by the atmospheric aesthetic of A24 films.
             </p>
           </div>
-          
+
           <div className="md:col-span-1">
             <h4 className="text-lg font-serif font-medium mb-4">Explore</h4>
             <ul className="space-y-2">
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="md:col-span-1">
             <h4 className="text-lg font-serif font-medium mb-4">Account</h4>
             <ul className="space-y-2">
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="md:col-span-1">
             <h4 className="text-lg font-serif font-medium mb-4">Connect</h4>
             <div className="flex space-x-4">
@@ -78,10 +78,10 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-12 pt-8 border-t border-cinematic-gray/20 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-cinematic-text/60">
-            © {new Date().getFullYear()} Lumina Library. All rights reserved.
+            © {new Date().getFullYear()} Folio Library. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <Link to="/privacy" className="text-sm text-cinematic-text/60 hover:text-accent transition-colors">

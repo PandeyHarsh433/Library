@@ -121,7 +121,7 @@ const WritersList: React.FC = () => {
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Our Writers</h1>
           <p className="text-cinematic-text/70 max-w-2xl mx-auto">
-            Discover talented authors from around the world who share their stories on Lumina.
+            Discover talented authors from around the world who share their stories on Folio.
           </p>
         </div>
 

@@ -125,7 +125,7 @@ const Navigation: React.FC = () => {
               className="flex items-center"
             >
               <BookOpen className="h-8 w-8 text-accent mr-2" />
-              <span className="text-2xl font-serif font-bold text-gradient">Lumina</span>
+              <span className="text-2xl font-serif font-bold text-gradient">Folio</span>
             </motion.div>
           </Link>
 

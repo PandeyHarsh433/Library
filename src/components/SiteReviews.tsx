@@ -11,7 +11,7 @@ const reviews = [
     name: "Emily Johnson",
     role: "Regular Reader",
     avatar: "https://randomuser.me/api/portraits/women/12.jpg",
-    review: "Lumina has completely transformed my reading experience. I've discovered so many incredible books that I wouldn't have found otherwise.",
+    review: "Folio has completely transformed my reading experience. I've discovered so many incredible books that I wouldn't have found otherwise.",
     rating: 5,
   },
   {
@@ -27,7 +27,7 @@ const reviews = [
     name: "Sarah Williams",
     role: "Book Club Organizer",
     avatar: "https://randomuser.me/api/portraits/women/33.jpg",
-    review: "Our book club exclusively uses Lumina to find our monthly reads. The diversity of voices and genres available is unmatched anywhere else.",
+    review: "Our book club exclusively uses Folio to find our monthly reads. The diversity of voices and genres available is unmatched anywhere else.",
     rating: 4,
   },
   {
@@ -35,7 +35,7 @@ const reviews = [
     name: "James Rodriguez",
     role: "Published Author",
     avatar: "https://randomuser.me/api/portraits/men/45.jpg",
-    review: "Lumina provides an excellent platform for connecting directly with readers. The community here is engaged and passionate about literature.",
+    review: "Folio provides an excellent platform for connecting directly with readers. The community here is engaged and passionate about literature.",
     rating: 5,
   }
 ];
@@ -47,10 +47,10 @@ const SiteReviews: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-serif font-bold mb-4">What Our Community Says</h2>
           <p className="text-cinematic-text/70 max-w-2xl mx-auto">
-            Join thousands of readers and writers who have found their literary home on Lumina.
+            Join thousands of readers and writers who have found their literary home on Folio.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {reviews.map((review) => (
             <motion.div
@@ -76,14 +76,14 @@ const SiteReviews: React.FC = () => {
                 </div>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`h-4 w-4 ${i < review.rating ? 'text-amber-400 fill-amber-400' : 'text-cinematic-text/30'}`} 
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${i < review.rating ? 'text-amber-400 fill-amber-400' : 'text-cinematic-text/30'}`}
                     />
                   ))}
                 </div>
               </div>
-              
+
               <div className="relative">
                 <Quote className="absolute -top-2 -left-2 h-8 w-8 text-accent/20 rotate-180" />
                 <p className="italic text-cinematic-text/90 pl-6">
@@ -93,14 +93,14 @@ const SiteReviews: React.FC = () => {
             </motion.div>
           ))}
         </div>
-        
+
         <div className="mt-12 text-center">
           <div className="inline-flex items-center justify-center">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
-                <Star 
-                  key={i} 
-                  className="h-6 w-6 text-amber-400 fill-amber-400" 
+                <Star
+                  key={i}
+                  className="h-6 w-6 text-amber-400 fill-amber-400"
                 />
               ))}
             </div>

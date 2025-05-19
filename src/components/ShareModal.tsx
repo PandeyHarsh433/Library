@@ -40,7 +40,7 @@ const ShareModal: React.FC<ShareModalProps> = ({
   const { toast } = useToast();
 
   const encodedUrl = encodeURIComponent(url);
-  const encodedTitle = encodeURIComponent(`Check out this ${type} on Lumina: ${title}`);
+  const encodedTitle = encodeURIComponent(`Check out this ${type} on Folio: ${title}`);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(url);

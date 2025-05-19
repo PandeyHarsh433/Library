@@ -208,7 +208,7 @@ const AdminDashboard: React.FC = () => {
                   className="w-full justify-start text-cinematic-text hover:text-accent hover:bg-accent/10"
                 >
                   <Home className="h-5 w-5 mr-3" />
-                  Return to Lumina
+                  Return to Folio
                 </Button>
               </Link>
 

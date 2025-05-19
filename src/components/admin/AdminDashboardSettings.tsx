@@ -29,7 +29,7 @@ const AdminDashboardSettings: React.FC = () => {
 
   // Platform settings
   const [platformSettings, setPlatformSettings] = useState({
-    siteName: 'Lumina',
+    siteName: 'Folio',
     tagline: 'Discover Stories That Illuminate The Soul',
     requireApproval: true,
     maxBooksPerWriter: 20,
@@ -54,12 +54,12 @@ const AdminDashboardSettings: React.FC = () => {
     sendBookApprovalEmail: true,
     sendCommentNotifications: true,
     adminEmailAddress: 'admin@lumina-books.com',
-    emailFromName: 'Lumina Books',
+    emailFromName: 'Folio Books',
   });
 
   const handleSaveSettings = () => {
     setIsSaving(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSaving(false);
@@ -74,7 +74,7 @@ const AdminDashboardSettings: React.FC = () => {
   const resetSettings = (settingsType: 'platform' | 'moderation' | 'email') => {
     if (settingsType === 'platform') {
       setPlatformSettings({
-        siteName: 'Lumina',
+        siteName: 'Folio',
         tagline: 'Discover Stories That Illuminate The Soul',
         requireApproval: true,
         maxBooksPerWriter: 20,
@@ -97,7 +97,7 @@ const AdminDashboardSettings: React.FC = () => {
         sendBookApprovalEmail: true,
         sendCommentNotifications: true,
         adminEmailAddress: 'admin@lumina-books.com',
-        emailFromName: 'Lumina Books',
+        emailFromName: 'Folio Books',
       });
     }
 
@@ -121,20 +121,20 @@ const AdminDashboardSettings: React.FC = () => {
 
       <Tabs defaultValue="general" className="space-y-6">
         <TabsList className="bg-cinematic-darker/60 w-full flex justify-start border border-cinematic-gray/20 rounded-md h-12">
-          <TabsTrigger 
-            value="general" 
+          <TabsTrigger
+            value="general"
             className="rounded-sm px-4 data-[state=active]:bg-accent data-[state=active]:text-cinematic-darker"
           >
             General
           </TabsTrigger>
-          <TabsTrigger 
-            value="moderation" 
+          <TabsTrigger
+            value="moderation"
             className="rounded-sm px-4 data-[state=active]:bg-accent data-[state=active]:text-cinematic-darker"
           >
             Content Moderation
           </TabsTrigger>
-          <TabsTrigger 
-            value="emails" 
+          <TabsTrigger
+            value="emails"
             className="rounded-sm px-4 data-[state=active]:bg-accent data-[state=active]:text-cinematic-darker"
           >
             Email Notifications
@@ -150,26 +150,26 @@ const AdminDashboardSettings: React.FC = () => {
                 General Platform Settings
               </CardTitle>
               <CardDescription>
-                Configure the basic settings and features of the Lumina platform
+                Configure the basic settings and features of the Folio platform
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="siteName">Site Name</Label>
-                  <Input 
-                    id="siteName" 
-                    value={platformSettings.siteName} 
-                    onChange={(e) => setPlatformSettings({...platformSettings, siteName: e.target.value})} 
+                  <Input
+                    id="siteName"
+                    value={platformSettings.siteName}
+                    onChange={(e) => setPlatformSettings({ ...platformSettings, siteName: e.target.value })}
                     className="bg-cinematic-darker/60 border-cinematic-gray/30"
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="tagline">Tagline</Label>
-                  <Input 
-                    id="tagline" 
-                    value={platformSettings.tagline} 
-                    onChange={(e) => setPlatformSettings({...platformSettings, tagline: e.target.value})} 
+                  <Input
+                    id="tagline"
+                    value={platformSettings.tagline}
+                    onChange={(e) => setPlatformSettings({ ...platformSettings, tagline: e.target.value })}
                     className="bg-cinematic-darker/60 border-cinematic-gray/30"
                   />
                 </div>
@@ -178,11 +178,11 @@ const AdminDashboardSettings: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="maxBooksPerWriter">Maximum Books Per Writer</Label>
-                  <Input 
-                    id="maxBooksPerWriter" 
-                    type="number" 
-                    value={platformSettings.maxBooksPerWriter} 
-                    onChange={(e) => setPlatformSettings({...platformSettings, maxBooksPerWriter: parseInt(e.target.value)})} 
+                  <Input
+                    id="maxBooksPerWriter"
+                    type="number"
+                    value={platformSettings.maxBooksPerWriter}
+                    onChange={(e) => setPlatformSettings({ ...platformSettings, maxBooksPerWriter: parseInt(e.target.value) })}
                     className="bg-cinematic-darker/60 border-cinematic-gray/30"
                   />
                 </div>
@@ -196,9 +196,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Require Book Approval</h4>
                     <p className="text-sm text-cinematic-text/70">Require admin approval before books are published</p>
                   </div>
-                  <Switch 
-                    checked={platformSettings.requireApproval} 
-                    onCheckedChange={(checked) => setPlatformSettings({...platformSettings, requireApproval: checked})} 
+                  <Switch
+                    checked={platformSettings.requireApproval}
+                    onCheckedChange={(checked) => setPlatformSettings({ ...platformSettings, requireApproval: checked })}
                   />
                 </div>
 
@@ -207,9 +207,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Enable Comments</h4>
                     <p className="text-sm text-cinematic-text/70">Allow users to comment on books</p>
                   </div>
-                  <Switch 
-                    checked={platformSettings.enableComments} 
-                    onCheckedChange={(checked) => setPlatformSettings({...platformSettings, enableComments: checked})} 
+                  <Switch
+                    checked={platformSettings.enableComments}
+                    onCheckedChange={(checked) => setPlatformSettings({ ...platformSettings, enableComments: checked })}
                   />
                 </div>
 
@@ -218,9 +218,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Enable Ratings</h4>
                     <p className="text-sm text-cinematic-text/70">Allow users to rate books</p>
                   </div>
-                  <Switch 
-                    checked={platformSettings.enableRatings} 
-                    onCheckedChange={(checked) => setPlatformSettings({...platformSettings, enableRatings: checked})} 
+                  <Switch
+                    checked={platformSettings.enableRatings}
+                    onCheckedChange={(checked) => setPlatformSettings({ ...platformSettings, enableRatings: checked })}
                   />
                 </div>
 
@@ -229,9 +229,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Enable Writer Applications</h4>
                     <p className="text-sm text-cinematic-text/70">Allow users to apply to become writers</p>
                   </div>
-                  <Switch 
-                    checked={platformSettings.enableWriterApplications} 
-                    onCheckedChange={(checked) => setPlatformSettings({...platformSettings, enableWriterApplications: checked})} 
+                  <Switch
+                    checked={platformSettings.enableWriterApplications}
+                    onCheckedChange={(checked) => setPlatformSettings({ ...platformSettings, enableWriterApplications: checked })}
                   />
                 </div>
 
@@ -240,9 +240,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium text-red-500">Maintenance Mode</h4>
                     <AlertTriangle className="h-4 w-4 text-red-500 ml-2" />
                   </div>
-                  <Switch 
-                    checked={platformSettings.maintenanceMode} 
-                    onCheckedChange={(checked) => setPlatformSettings({...platformSettings, maintenanceMode: checked})} 
+                  <Switch
+                    checked={platformSettings.maintenanceMode}
+                    onCheckedChange={(checked) => setPlatformSettings({ ...platformSettings, maintenanceMode: checked })}
                   />
                 </div>
                 {platformSettings.maintenanceMode && (
@@ -255,15 +255,15 @@ const AdminDashboardSettings: React.FC = () => {
               </div>
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-cinematic-gray/30 text-cinematic-text"
                 onClick={() => resetSettings('platform')}
               >
                 <RefreshCw className="h-4 w-4 mr-2" />
                 Reset to Defaults
               </Button>
-              <Button 
+              <Button
                 onClick={handleSaveSettings}
                 disabled={isSaving}
                 className="bg-accent text-cinematic-darker hover:bg-accent/90"
@@ -300,11 +300,11 @@ const AdminDashboardSettings: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="maxFlaggedCommentsBeforeBan">Max Flagged Comments Before Ban</Label>
-                  <Input 
-                    id="maxFlaggedCommentsBeforeBan" 
-                    type="number" 
-                    value={moderationSettings.maxFlaggedCommentsBeforeBan} 
-                    onChange={(e) => setModerationSettings({...moderationSettings, maxFlaggedCommentsBeforeBan: parseInt(e.target.value)})} 
+                  <Input
+                    id="maxFlaggedCommentsBeforeBan"
+                    type="number"
+                    value={moderationSettings.maxFlaggedCommentsBeforeBan}
+                    onChange={(e) => setModerationSettings({ ...moderationSettings, maxFlaggedCommentsBeforeBan: parseInt(e.target.value) })}
                     className="bg-cinematic-darker/60 border-cinematic-gray/30"
                   />
                 </div>
@@ -318,9 +318,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Automatic Content Moderation</h4>
                     <p className="text-sm text-cinematic-text/70">Use AI to automatically flag inappropriate content</p>
                   </div>
-                  <Switch 
-                    checked={moderationSettings.autoModeration} 
-                    onCheckedChange={(checked) => setModerationSettings({...moderationSettings, autoModeration: checked})} 
+                  <Switch
+                    checked={moderationSettings.autoModeration}
+                    onCheckedChange={(checked) => setModerationSettings({ ...moderationSettings, autoModeration: checked })}
                   />
                 </div>
 
@@ -329,9 +329,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Filter Profanity</h4>
                     <p className="text-sm text-cinematic-text/70">Automatically filter profanity from user comments</p>
                   </div>
-                  <Switch 
-                    checked={moderationSettings.filterProfanity} 
-                    onCheckedChange={(checked) => setModerationSettings({...moderationSettings, filterProfanity: checked})} 
+                  <Switch
+                    checked={moderationSettings.filterProfanity}
+                    onCheckedChange={(checked) => setModerationSettings({ ...moderationSettings, filterProfanity: checked })}
                   />
                 </div>
 
@@ -340,9 +340,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Require Moderation for New Writers</h4>
                     <p className="text-sm text-cinematic-text/70">All content from new writers requires moderation</p>
                   </div>
-                  <Switch 
-                    checked={moderationSettings.requireModerationForNewWriters} 
-                    onCheckedChange={(checked) => setModerationSettings({...moderationSettings, requireModerationForNewWriters: checked})} 
+                  <Switch
+                    checked={moderationSettings.requireModerationForNewWriters}
+                    onCheckedChange={(checked) => setModerationSettings({ ...moderationSettings, requireModerationForNewWriters: checked })}
                   />
                 </div>
 
@@ -351,23 +351,23 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Notify Admins on Flagged Content</h4>
                     <p className="text-sm text-cinematic-text/70">Send email notifications to admins when content is flagged</p>
                   </div>
-                  <Switch 
-                    checked={moderationSettings.notifyAdminsOnFlagged} 
-                    onCheckedChange={(checked) => setModerationSettings({...moderationSettings, notifyAdminsOnFlagged: checked})} 
+                  <Switch
+                    checked={moderationSettings.notifyAdminsOnFlagged}
+                    onCheckedChange={(checked) => setModerationSettings({ ...moderationSettings, notifyAdminsOnFlagged: checked })}
                   />
                 </div>
               </div>
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-cinematic-gray/30 text-cinematic-text"
                 onClick={() => resetSettings('moderation')}
               >
                 <RefreshCw className="h-4 w-4 mr-2" />
                 Reset to Defaults
               </Button>
-              <Button 
+              <Button
                 onClick={handleSaveSettings}
                 disabled={isSaving}
                 className="bg-accent text-cinematic-darker hover:bg-accent/90"
@@ -404,20 +404,20 @@ const AdminDashboardSettings: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="adminEmailAddress">Admin Email Address</Label>
-                  <Input 
-                    id="adminEmailAddress" 
-                    type="email" 
-                    value={emailSettings.adminEmailAddress} 
-                    onChange={(e) => setEmailSettings({...emailSettings, adminEmailAddress: e.target.value})} 
+                  <Input
+                    id="adminEmailAddress"
+                    type="email"
+                    value={emailSettings.adminEmailAddress}
+                    onChange={(e) => setEmailSettings({ ...emailSettings, adminEmailAddress: e.target.value })}
                     className="bg-cinematic-darker/60 border-cinematic-gray/30"
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="emailFromName">Email From Name</Label>
-                  <Input 
-                    id="emailFromName" 
-                    value={emailSettings.emailFromName} 
-                    onChange={(e) => setEmailSettings({...emailSettings, emailFromName: e.target.value})} 
+                  <Input
+                    id="emailFromName"
+                    value={emailSettings.emailFromName}
+                    onChange={(e) => setEmailSettings({ ...emailSettings, emailFromName: e.target.value })}
                     className="bg-cinematic-darker/60 border-cinematic-gray/30"
                   />
                 </div>
@@ -431,9 +431,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Send Welcome Email</h4>
                     <p className="text-sm text-cinematic-text/70">Send a welcome email to new users when they register</p>
                   </div>
-                  <Switch 
-                    checked={emailSettings.sendWelcomeEmail} 
-                    onCheckedChange={(checked) => setEmailSettings({...emailSettings, sendWelcomeEmail: checked})} 
+                  <Switch
+                    checked={emailSettings.sendWelcomeEmail}
+                    onCheckedChange={(checked) => setEmailSettings({ ...emailSettings, sendWelcomeEmail: checked })}
                   />
                 </div>
 
@@ -442,9 +442,9 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Send Book Approval Notifications</h4>
                     <p className="text-sm text-cinematic-text/70">Notify writers when their books are approved or rejected</p>
                   </div>
-                  <Switch 
-                    checked={emailSettings.sendBookApprovalEmail} 
-                    onCheckedChange={(checked) => setEmailSettings({...emailSettings, sendBookApprovalEmail: checked})} 
+                  <Switch
+                    checked={emailSettings.sendBookApprovalEmail}
+                    onCheckedChange={(checked) => setEmailSettings({ ...emailSettings, sendBookApprovalEmail: checked })}
                   />
                 </div>
 
@@ -453,23 +453,23 @@ const AdminDashboardSettings: React.FC = () => {
                     <h4 className="font-medium">Send Comment Notifications</h4>
                     <p className="text-sm text-cinematic-text/70">Notify writers when readers comment on their books</p>
                   </div>
-                  <Switch 
-                    checked={emailSettings.sendCommentNotifications} 
-                    onCheckedChange={(checked) => setEmailSettings({...emailSettings, sendCommentNotifications: checked})} 
+                  <Switch
+                    checked={emailSettings.sendCommentNotifications}
+                    onCheckedChange={(checked) => setEmailSettings({ ...emailSettings, sendCommentNotifications: checked })}
                   />
                 </div>
               </div>
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-cinematic-gray/30 text-cinematic-text"
                 onClick={() => resetSettings('email')}
               >
                 <RefreshCw className="h-4 w-4 mr-2" />
                 Reset to Defaults
               </Button>
-              <Button 
+              <Button
                 onClick={handleSaveSettings}
                 disabled={isSaving}
                 className="bg-accent text-cinematic-darker hover:bg-accent/90"

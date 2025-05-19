@@ -22,10 +22,10 @@ const Register: React.FC = () => {
   const { signUp } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (password !== confirmPassword) {
       toast({
         title: "Error",
@@ -34,7 +34,7 @@ const Register: React.FC = () => {
       });
       return;
     }
-    
+
     if (!agreeTerms) {
       toast({
         title: "Error",
@@ -43,7 +43,7 @@ const Register: React.FC = () => {
       });
       return;
     }
-    
+
     try {
       await signUp(email, password, {
         full_name: name,
@@ -62,7 +62,7 @@ const Register: React.FC = () => {
       });
     }
   };
-  
+
   return (
     <div className="pt-24 pb-16 min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md px-4">
@@ -74,9 +74,9 @@ const Register: React.FC = () => {
         >
           <BookOpen className="h-12 w-12 text-accent mx-auto mb-4" />
           <h1 className="text-3xl font-serif font-bold mb-2">Create Account</h1>
-          <p className="text-cinematic-text/70">Join the Lumina reader community</p>
+          <p className="text-cinematic-text/70">Join the Folio reader community</p>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ const Register: React.FC = () => {
                       <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-cinematic-text/50" />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
                     <div className="relative">
@@ -121,7 +121,7 @@ const Register: React.FC = () => {
                       <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-cinematic-text/50" />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="password">Password</Label>
                     <div className="relative">
@@ -150,7 +150,7 @@ const Register: React.FC = () => {
                       </Button>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="confirmPassword">Confirm Password</Label>
                     <div className="relative">
@@ -160,11 +160,10 @@ const Register: React.FC = () => {
                         placeholder="••••••••"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                        className={`pl-10 pr-10 bg-cinematic-dark/50 border-cinematic-gray/30 focus:border-accent ${
-                          confirmPassword && password !== confirmPassword 
-                            ? 'border-red-500 focus:border-red-500' 
+                        className={`pl-10 pr-10 bg-cinematic-dark/50 border-cinematic-gray/30 focus:border-accent ${confirmPassword && password !== confirmPassword
+                            ? 'border-red-500 focus:border-red-500'
                             : ''
-                        }`}
+                          }`}
                         required
                       />
                       <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-cinematic-text/50" />
@@ -186,10 +185,10 @@ const Register: React.FC = () => {
                       <p className="text-xs text-red-500 mt-1">Passwords do not match</p>
                     )}
                   </div>
-                  
+
                   <div className="flex items-start space-x-2">
-                    <Checkbox 
-                      id="terms" 
+                    <Checkbox
+                      id="terms"
                       checked={agreeTerms}
                       onCheckedChange={(checked) => setAgreeTerms(!!checked)}
                       className="data-[state=checked]:bg-accent data-[state=checked]:border-accent mt-1"
@@ -208,9 +207,9 @@ const Register: React.FC = () => {
                       </Link>
                     </label>
                   </div>
-                  
-                  <Button 
-                    type="submit" 
+
+                  <Button
+                    type="submit"
                     className="w-full bg-accent text-cinematic-darker hover:bg-accent/90"
                     disabled={!agreeTerms || (confirmPassword && password !== confirmPassword)}
                   >
@@ -230,22 +229,22 @@ const Register: React.FC = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="w-full border-cinematic-gray/30 text-cinematic-text hover:border-accent hover:text-accent"
                 >
                   Google
                 </Button>
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   className="w-full border-cinematic-gray/30 text-cinematic-text hover:border-accent hover:text-accent"
                 >
                   Apple
                 </Button>
               </div>
-              
+
               <p className="text-center text-sm mt-4">
                 Already have an account?{' '}
                 <Link to="/login" className="text-accent hover:text-accent/80 hover:underline">
