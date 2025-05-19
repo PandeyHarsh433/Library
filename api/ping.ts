@@ -1,8 +1,8 @@
 const { createClient } = require('@supabase/supabase-js');
 
 // Use environment variables
-const SUPABASE_URL = process.env.VITE_PUBLIC_SUPABASE_URL;
-const SUPABASE_SERVICE_KEY = process.env.VITE_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
 
 module.exports = async (req, res) => {
     try {
