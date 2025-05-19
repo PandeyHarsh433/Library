@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@layer base {
+  /* We're setting dark theme as default for our cinematic design */
+  :root {
+    /* Dark mode values by default */
+    --background: 225 18% 13%; /* #1A1F2C */
+    --foreground: 0 0% 84%; /* #D6D6D6 */
+
+    --card: 225 18% 13%; /* #1A1F2C */
+    --card-foreground: 0 0% 84%; /* #D6D6D6 */
+
+    --popover: 225 18% 13%; /* #1A1F2C */
+    --popover-foreground: 0 0% 84%; /* #D6D6D6 */
+
+    --primary: 32 72% 63%; /* #E5A55D amber accent */
+    --primary-foreground: 240 6% 10%; /* #121419 */
+
+    --secondary: 252 6% 22%; /* #403E43 */
+    --secondary-foreground: 0 0% 84%; /* #D6D6D6 */
+
+    --muted: 252 6% 22%; /* #403E43 */
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 32 72% 63%; /* #E5A55D amber accent */
+    --accent-foreground: 240 6% 10%; /* #121419 */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 252 6% 22%;
+    --input: 252 6% 22%;
+    --ring: 32 72% 63%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 252 6% 10%; /* #19181B */
+    --sidebar-foreground: 0 0% 84%; /* #D6D6D6 */
+    --sidebar-primary: 32 72% 63%; /* #E5A55D */
+    --sidebar-primary-foreground: 252 6% 10%; /* #19181B */
+    --sidebar-accent: 252 6% 17%; /* #2A282D */
+    --sidebar-accent-foreground: 0 0% 84%; /* #D6D6D6 */
+    --sidebar-border: 252 6% 17%; /* #2A282D */
+    --sidebar-ring: 32 72% 63%; /* #E5A55D */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border selection:bg-accent/20 selection:text-accent;
+  }
+
+  html {
+    @apply scroll-smooth;
+    height: 100%;
+  }
+
+  body {
+    @apply bg-cinematic-dark text-cinematic-text antialiased;
+    height: 100%;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    position: relative;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif text-cinematic-highlight;
+  }
+
+  p,
+  span,
+  div,
+  li,
+  a {
+    @apply font-sans;
+  }
+
+  /* Apply film grain overlay to the root */
+  body::before {
+    @apply bg-grain-overlay animate-film-grain;
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    opacity: 0.05;
+  }
+}
+
+@layer utilities {
+  .film-fade {
+    @apply bg-gradient-fade;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .highlight-hover {
+    @apply relative overflow-hidden;
+  }
+
+  .highlight-hover::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 ease-in-out;
+    content: "";
+  }
+
+  .highlight-hover:hover::after {
+    @apply w-full;
+  }
+
+  .glass-card {
+    @apply bg-cinematic-darker/80 backdrop-blur-md border border-cinematic-gray/30;
+  }
+
+  .book-shadow {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-cinematic-text to-cinematic-highlight bg-clip-text text-transparent;
+  }
+
+  /* Fix for navbar conflicts */
+  .navbar-fixed {
+    @apply fixed top-0 left-0 right-0 z-50;
+  }
+
+  /* Profile page styles */
+  .profile-container {
+    @apply max-w-4xl mx-auto px-4 py-8;
+  }
+
+  .profile-header {
+    @apply flex flex-col md:flex-row items-center md:items-start gap-6;
+  }
+
+  .profile-avatar {
+    @apply w-32 h-32 rounded-full object-cover border-2 border-accent;
+  }
+
+  .profile-info {
+    @apply flex-1;
+  }
+
+  .profile-section {
+    @apply mt-8;
+  }
+}
