@@ -42,11 +42,12 @@ Linting & Formatting: ESLint, Prettier
 
 Screenshots
 Below are screenshots of the Library Management System in action:
-Screenshot 1: Book List
-Description: The main book list view, displaying all books with options to edit or delete.
-Screenshot 2: Add/Edit Book Form
-Description: The form for adding or editing a book, with fields for title, author, and publication year.
-Note: Replace the placeholder paths (screenshots/book-list.png, screenshots/book-form.png) with actual screenshot files after adding them to a screenshots/ folder in your repository.
+Screenshot 1: Home Page
+![Home Page](https://raw.githubusercontent.com/PandeyHarsh433/Library/refs/heads/main/public/admin.png)
+Screenshot 2: Book Details
+![Book Details Page](https://raw.githubusercontent.com/PandeyHarsh433/Library/refs/heads/main/public/book.png)
+Screenshot 2: Admin Panel
+![Admin Page](https://raw.githubusercontent.com/PandeyHarsh433/Library/refs/heads/main/public/admin.png)
 Getting Started
 Prerequisites
 Ensure you have the following installed:
